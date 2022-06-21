@@ -1,0 +1,236 @@
+@mixin mobile {
+  @media (max-width: $TABLET) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $TABLET) {
+    @content;
+  }
+}
+
+@mixin only-tablet {
+  @media (min-width: $TABLET) and (max-width: calc($DESKTOP - 1px)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $DESKTOP) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: $LARGE_DESKTOP) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin transition($prop) {
+  transition: $prop $TRANSITION_DURATION $TRANSITION_TIMING;
+}
+
+@mixin a {
+  @include transition(color);
+  color: $COLOR_BLACK-BLUE;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    color: $COLOR_GREY-BLUE;
+  }
+  * {
+    color: inherit;
+  }
+}
+
+@mixin text-h1 {
+  color: $COLOR_BLACK-BLUE;
+  font-size: 2.6rem;
+  line-height: 3rem;
+  @include large-desktop {
+    font-size: 5.5rem;
+    line-height: 6rem;
+  }
+}
+
+@mixin text-h2 {
+  color: $COLOR_BLACK-BLUE;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  @include large-desktop {
+    font-size: 3.4rem;
+    line-height: 4.2rem;
+  }
+}
+
+@mixin text-h3 {
+  color: $COLOR_BLACK-BLUE;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  @include large-desktop {
+    font-size: 2.4rem;
+    line-height: 3rem;
+  }
+}
+
+@mixin text-p1 {
+  color: $COLOR_BLACK-BLUE;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  @include large-desktop {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
+
+@mixin text-p2 {
+  color: $COLOR_BLACK-BLUE;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  @include large-desktop {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+}
+
+@mixin text-s1 {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  @include large-desktop {
+    font-size: 2.4rem;
+    line-height: 3rem;
+  }
+}
+
+@mixin color($colorName, $colorHoverName) {
+  @include transition(color);
+  color: $colorName;
+
+  &:hover {
+    color: $colorHoverName;
+  }
+}
+
+@mixin square($val) {
+  @include flex-center;
+  width: $val;
+  min-width: $val;
+  max-width: $val;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+@mixin dropdown-content {
+  @include default-border;
+  min-width: 13rem;
+  background-color: white;
+  padding: 2.4rem 2rem 2rem 2rem;
+  li {
+    &:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@mixin blur-border {
+  position: relative;
+  border: 2px solid transparent;
+  &::after {
+    @include transition(opacity);
+    content: '';
+    position: absolute;
+    left: var(--blur-border-after-offset);
+    right: var(--blur-border-after-offset);
+    top: var(--blur-border-after-offset);
+    bottom: var(--blur-border-after-offset);
+    border: var(--blur-border-width) solid var(--blur-border-color);
+    border-radius: inherit;
+    filter: blur(var(--blur));
+    opacity: 1;
+  }
+  &:hover,
+  &.hover {
+    border-color: var(--blur-border-color-hover);
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin default-border {
+  border: $BORDER_DEFAULT;
+}
+
+@mixin link-bottom-border {
+  @include transition(all);
+  text-decoration: underline;
+  text-decoration-color: $COLOR_YELLOW;
+  text-underline-offset: 0.8rem;
+  &:hover {
+    color: $COLOR_BLACK-BLUE;
+    text-decoration-color: $COLOR_BLACK-BLUE;
+  }
+  @include large-desktop {
+    text-underline-offset: 0.8rem;
+  }
+}
+
+@mixin list-style {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: var(--disc-position-top);
+    width: 0.9rem;
+    height: 0.9rem;
+    background-color: $COLOR_BLACK-BLUE;
+    border-radius: 50%;
+  }
+}
+
+@mixin sticky {
+  animation: slideDown $TRANSITION_DURATION $TRANSITION_TIMING;
+  transform-origin: top center;
+  @keyframes slideDown {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+  position: fixed;
+  z-index: 98;
+  background-color: white;
+  top: var(--header-sticky-height);
+  left: 0;
+  padding: 0 var(--main-padding-x) 2rem;
+  width: 100%;
+  box-shadow: 0px 4px 40px rgba(187, 209, 242, 0.55);
+  .custom-select {
+    padding-top: 1.6rem;
+    border-top: 1px solid $COLOR_SMOKE;
+  }
+}
+
+@mixin text-overflow($prop) {
+  max-width: $prop;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

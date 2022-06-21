@@ -1,0 +1,103 @@
+
+{
+  "en": {
+
+  },
+
+  "ru": {
+  "headerVideo": "",
+  "mainText": "",
+  "details": [
+    {
+      "count": 0,
+      "text": ""
+    }
+  ],
+  "grant": {
+    "img": "",
+    "title": "",
+    "requests": "",
+    "link": {
+      "text": "",
+      "key": ""
+    }
+  },
+  "assistance": {
+    "title": "",
+    "items": [""]
+  },
+  "quote": {
+    "img": "",
+    "text": "",
+    "name": "",
+    "position": ""
+  },
+  "directions": {
+    "title": "",
+    "items": [
+      {
+        "img": "",
+        "title": "",
+        "text": "",
+        "link": ""
+      }
+    ]
+  },
+  "news": {
+    "title": "",
+    "link": {
+      "text": "",
+      "href": ""
+    },
+    "items": [
+      {
+        "img": "",
+        "title": "",
+        "date": "Date",
+        "link":
+      }
+    ]
+  },
+  "projects": {
+    "title": "",
+    "link": {
+      "text": "",
+      "href": ""
+    },
+    "items": [
+      {
+        "img": "",
+        "text": "",
+        "link": ""
+      }
+    ]
+  },
+  "report": {
+    "title": {
+      "text": "",
+      "link": {
+        "text": "",
+        "href": ""
+      }
+    },
+    "text": "",
+    "img": ""
+  },
+  "thanks": {
+    "title": "",
+    "description": {
+      "text": "",
+      "link": {
+        "text": "",
+        "href": ""
+      }
+    },
+    "links": [
+      {
+        "text": "",
+        "href": ""
+      }
+    ]
+  }
+}
+}

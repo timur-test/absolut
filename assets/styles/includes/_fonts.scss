@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Euclid';
+  src: url('~@/assets/fonts/EuclidA/EuclidCircularA-Regular.woff2')
+      format('woff2'),
+    url('~@/assets/fonts/EuclidA/EuclidCircularA-Regular.woff') format('woff'),
+    url('~@/assets/fonts/EuclidA/EuclidCircularA-Regular.ttf')
+      format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'iconmoon';
+  src: url('~@/assets/fonts/Icomoon/icomoon.woff2') format('woff2'),
+    url('~@/assets/fonts/Icomoon/icomoon.woff') format('woff'),
+    url('~@/assets/fonts/Icomoon/icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.text-h1 {
+  @include text-h1;
+}
+
+.text-h2 {
+  @include text-h2;
+}
+
+.text-h3 {
+  @include text-h3;
+}
+
+.text-p1 {
+  @include text-p1;
+}
+
+.text-p2 {
+  @include text-p2;
+}
+
+.text-s1 {
+  @include text-s1;
+}

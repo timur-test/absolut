@@ -1,0 +1,132 @@
+@import './includes/fonts';
+@import './includes/grid';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  // line-height: 1;
+}
+
+html {
+  --col-gap: 0.4rem;
+  --row-margin: -0.4rem;
+
+  --main-padding-x: 1.5rem;
+  --main-padding: 0 var(--main-padding-x);
+
+  --header-height: 8rem;
+  --header-sticky-height: 5.5rem;
+
+  --content-margin-top: 4rem;
+  --content-position-top: calc(
+    var(--header-height) + var(--content-margin-top)
+  );
+
+  --default-img-border-radius: 3rem;
+
+  --blur: 0.4rem;
+  --blur-border-width: 1.6rem;
+  --blur-border-color: #ffdf6b;
+  --blur-border-color-hover: #1d3e6f;
+  --blur-border-after-offset: calc(var(--blur-border-width) / -2);
+
+  font-size: calc(10 / 375 * 100vw);
+  scroll-behavior: smooth;
+  @include tablet {
+    --col-gap: 2rem;
+    --row-margin: -2rem;
+
+    --main-padding-x: 4rem;
+    --content-margin-top: 5rem;
+
+    font-size: calc(10 / 768 * 100vw);
+  }
+  @include desktop {
+    font-size: calc(10 / 1024 * 100vw);
+  }
+  @include large-desktop {
+    --main-padding-x: 5rem;
+    --header-height: 13.5rem;
+    --content-margin-top: 7rem;
+
+    font-size: calc(10 / 1440 * 100vw);
+  }
+}
+
+body {
+  font-family: $FONT_MAIN;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  @include a;
+}
+
+img {
+  width: 100%;
+}
+
+svg {
+  color: inherit;
+}
+
+button {
+  @include a;
+  font-family: $FONT_MAIN;
+  font-size: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+@for $i from 1 to 7 {
+  h#{$i} {
+    font-weight: normal;
+  }
+}
+
+.select {
+  &__title {
+    border: 2px solid $COLOR_GREY;
+    padding: 2rem 3rem;
+    &:hover {
+      border: 2px solid $COLOR_GREY-BLUE;
+    }
+  }
+  &__items {
+    margin-top: 0.6rem;
+    border: 2px solid $COLOR_BLACK-BLUE;
+    padding: 2rem;
+    li:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+  }
+  &.open {
+    .select__title {
+      border: 2px solid $COLOR_BLACK-BLUE;
+    }
+  }
+}
+
+.section-select {
+  width: 100%;
+  padding-bottom: 2.5rem;
+  border-bottom: $BORDER_DEFAULT;
+  margin-bottom: 5rem;
+  input {
+    display: none;
+    &:checked + label {
+      color: $COLOR_BLACK-BLUE;
+    }
+    & + label {
+      color: $COLOR_GREY-BLUE;
+      margin-right: 1.5rem;
+      cursor: pointer;
+    }
+  }
+}

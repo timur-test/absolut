@@ -1,0 +1,31 @@
+<svg
+  width="43"
+  height="43"
+  viewBox="0 0 43 43"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="21.5252"
+    cy="21.5008"
+    r="20.2088"
+    fill="white"
+    stroke="#1D3E6F"
+    stroke-width="2"
+  />
+  <path
+    d="M33.5436 21.5008H10.2139"
+    stroke="#1D3E6F"
+    stroke-width="2"
+  />
+  <path
+    d="M14.4556 15.8451L9.50684 21.5008L14.4556 27.1565"
+    stroke="#1D3E6F"
+    stroke-width="2"
+  />
+  <path
+    d="M28.5947 15.8453L33.5435 21.501L28.5947 27.1567"
+    stroke="#1D3E6F"
+    stroke-width="2"
+  />
+</svg>

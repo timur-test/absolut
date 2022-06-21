@@ -1,0 +1,31 @@
+$MOBILE: 374px;
+$TABLET: 767px;
+$DESKTOP: 1023px;
+$LARGE_DESKTOP: 1439px;
+
+$FONT_MAIN: 'Euclid';
+$FONT_ICON: 'iconmoon';
+
+$COLOR_BLACK-BLUE: #1d3e6f;
+$COLOR_GREY-BLUE: #7e858f;
+$COLOR_GREY: #dbdfe5;
+$COLOR_SMOKE: #e9ecf1;
+$COLOR_YELLOW: #ffdf6b;
+
+$TRANSITION_DURATION: 300ms;
+$TRANSITION_TIMING: ease-in-out;
+
+$BORDER_DEFAULT: 0.2rem solid $COLOR_BLACK-BLUE;
+
+:export {
+  bkTablet: $TABLET;
+  bkLargeDesk: $LARGE_DESKTOP;
+
+  colorBlackBlue: $COLOR_BLACK-BLUE;
+  colorGreyBlue: $COLOR_GREY-BLUE;
+  colorGrey: $COLOR_GREY;
+  colorSmoke: $COLOR_SMOKE;
+  colorYellow: $COLOR_YELLOW;
+
+  transitionDuration: $TRANSITION_DURATION;
+}
